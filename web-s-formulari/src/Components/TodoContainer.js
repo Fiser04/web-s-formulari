@@ -42,10 +42,16 @@ class ToDoContainer extends React.Component {
       },
     ],
   };
+  handleChange = () => {
+    console.log("clicked");
+  };
   render() {
     return (
       <div>
-        <ToDoList items={this.state.items} />
+        <ToDoList
+          items={this.state.items}
+          handleChangeProps={this.handleChange}
+        />
       </div>
     );
   }
