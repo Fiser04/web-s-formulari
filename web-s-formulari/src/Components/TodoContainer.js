@@ -87,6 +87,7 @@ class ToDoContainer extends React.Component {
         <ToDoList
           items={this.state.items}
           handleChangeProps={this.handleChange}
+          deleteItemProps={this.deleteItem}
         />
       </div>
     );

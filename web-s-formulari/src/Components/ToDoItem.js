@@ -12,7 +12,12 @@ class ToDoItem extends React.Component {
             checked={this.props.completed}
             onChange={() => this.props.handleChangeProps(this.props.item.id)}
           />
-          <button>Delete</button>
+          <button
+            type="button"
+            onClick={() => this.props.deleteItemProps(this.props.item.id)}
+          >
+            Delete
+          </button>
         </form>
       </li>
     );
