@@ -1,5 +1,6 @@
 import React from "react";
 import ToDoList from "./ToDoList";
+
 class ToDoContainer extends React.Component {
   state = {
     items: [
@@ -42,22 +43,51 @@ class ToDoContainer extends React.Component {
       },
     ],
   };
+  //HANDLE CHANGE STATE UPDATE
   // handleChange = (id) => {
   //   console.log("clicked", id);
+  //   this.setState({
+  //     items: this.state.items.map((item) => {
+  //       if (item.id === id) {
+  //         return {
+  //           ...item,
+  //           completed: !item.completed,
+  //         };
+  //       }
+  //       return item;
+  //     }),
+  //   });
   // };
 
+  //HANDLE CHANGE STATE UPDATE WITH PREVIOUS STATE
   handleChange = (id) => {
     console.log("clicked", id);
-    this.setState({
-      items: this.state.items.map((item) => {
-        if (item.id === id) {
-          return {
-            ...item,
-            completed: !item.completed,
-          };
-        }
-        return item;
-      }),
+    this.setState((prevState) => {
+      return {
+        items: prevState.items.map((item) => {
+          if (item.id === id) {
+            return {
+              ...item,
+              completed: !item.completed,
+            };
+          }
+          return item;
+        }),
+      };
+    });
+  };
+
+  deleteItem = (id) => {
+    console.log("delete", id);
+    this.setState((prevState) => {
+      return {
+        // items: prevState.items.filter((item) => item.id !== id),
+        items: [
+          ...this.state.items.filter((item) => {
+            return item.id !== id;
+          }),
+        ],
+      };
     });
   };
 
@@ -67,6 +97,7 @@ class ToDoContainer extends React.Component {
         <ToDoList
           items={this.state.items}
           handleChangeProps={this.handleChange}
+          deleteItemProps={this.deleteItem}
         />
       </div>
     );
