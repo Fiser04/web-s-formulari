@@ -45,7 +45,6 @@ class ToDoContainer extends React.Component {
   render() {
     return (
       <div>
-        <h1>ToDo List</h1>
         <ToDoList items={this.state.items} />
       </div>
     );
