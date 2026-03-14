@@ -79,6 +79,16 @@ class ToDoContainer extends React.Component {
 
   deleteItem = (id) => {
     console.log("delete", id);
+    this.setState((prevState) => {
+      return {
+        // items: prevState.items.filter((item) => item.id !== id),
+        items: [
+          ...this.state.items.filter((item) => {
+            return item.id !== id;
+          }),
+        ],
+      };
+    });
   };
 
   render() {
