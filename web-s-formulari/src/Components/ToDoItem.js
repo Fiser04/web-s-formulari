@@ -9,7 +9,6 @@ class ToDoItem extends React.Component {
   }
   changeCompleted = (event) => {
     this.setState({ completed: event.target.checked });
-    alert("You clicked on " + this.props.title);
   };
   // alertUser = (event) => {
   //   alert("You clicked on " + this.props.title);
@@ -26,8 +25,9 @@ class ToDoItem extends React.Component {
           {this.props.title}{" "}
           <input
             type="checkbox"
-            checked={this.state.completed}
-            onChange={this.changeCompleted}
+            checked={this.props.completed}
+            // onChange={this.changeCompleted}
+            onChange={() => this.props.handleChangeProps(this.props.item.id)}
           />
           {changed}
         </form>
