@@ -6,7 +6,11 @@ class ToDoList extends React.Component {
     return (
       <ul>
         {this.props.items.map((item) => (
-          <ToDoItem title={item.title} completed={item.completed} />
+          <ToDoItem
+            title={item.title}
+            completed={item.completed}
+            handleChangeProps={this.props.handleChangeProps}
+          />
         ))}
       </ul>
     );
