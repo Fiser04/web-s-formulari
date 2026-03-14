@@ -7,7 +7,6 @@ class ToDoList extends React.Component {
       <ul>
         {this.props.items.map((item) => (
           <ToDoItem
-            key={item.id}
             item={item}
             title={item.title}
             completed={item.completed}
