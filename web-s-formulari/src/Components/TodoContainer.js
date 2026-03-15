@@ -1,5 +1,6 @@
 import React from "react";
 import ToDoList from "./ToDoList";
+import ToDoAdder from "./ToDoAdder";
 
 class ToDoContainer extends React.Component {
   state = {
@@ -91,9 +92,25 @@ class ToDoContainer extends React.Component {
     });
   };
 
+  addItem = (title) => {
+    console.log("add", title);
+    const newItem = {
+      userId: 1,
+      id: this.state.items.length + 1,
+      title: title,
+      completed: false,
+    };
+    this.setState((prevState) => {
+      return {
+        items: [...prevState.items, newItem],
+      };
+    });
+  };
+
   render() {
     return (
       <div>
+        <ToDoAdder addItemProps={this.addItem} />
         <ToDoList
           items={this.state.items}
           handleChangeProps={this.handleChange}
