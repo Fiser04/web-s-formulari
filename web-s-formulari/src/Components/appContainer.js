@@ -1,7 +1,9 @@
 import React from "react";
 import SimpleInput from "./forms/simpleInput.js";
 import MultipleInput from "./forms/MultipleInput.js";
-
+import SelectInput from "./forms/SelectInput.js";
+import CheckBoxRadio from "./forms/CheckBoxRadio.js";
+import FormValidation from "./forms/FormValidation.js";
 class appContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -15,6 +17,24 @@ class appContainer extends React.Component {
 
   handleChange = (event) => {
     [event.target.name] = event.target.value;
+    console.log("Input received:", event.target.value);
+  };
+
+  handlecheckbox = (event) => {
+    const { name, value } = event.target;
+    this.setState((prevState) => ({
+      [name]: value,
+    }));
+    console.log("Checkbox input received:", name, value);
+  };
+
+  handleCheckEmail = (event) => {
+    const email = event.target.value;
+    if (!email.includes("@")) {
+      this.setState({ error: "Invalid email address" });
+    } else {
+      this.setState({ error: "" });
+    }
   };
 
   render() {
@@ -22,8 +42,10 @@ class appContainer extends React.Component {
       <div className="appContainer">
         <h1>Formulari</h1>
         <SimpleInput handleInput={this.handleInput} />{" "}
-        <p>Input value: {this.state.text}</p>
         <MultipleInput handleChange={this.handleChange} />
+        <SelectInput handleInput={this.handleChange} />
+        <CheckBoxRadio handleInput={this.handlecheckbox} />
+        <FormValidation handleCheckEmail={this.handleCheckEmail} />
       </div>
     );
   }
