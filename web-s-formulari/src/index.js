@@ -2,12 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-// import ToDoContainer from "./Components/TodoContainer";
-import AppContainer from "./Components/appContainer";
+import ToDoContainer from "./Components/TodoContainer";
+// import AppContainer from "./Components/appContainer";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AppContainer />
+    {/* <AppContainer />*/}
+    <ToDoContainer />
   </React.StrictMode>,
 );
 
