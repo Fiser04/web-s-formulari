@@ -3,11 +3,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 // import ToDoContainer from "./Components/TodoContainer";
-import appContainer from "./Components/appContainer";
+import AppContainer from "./Components/appContainer";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <appContainer />{" "}
+    <AppContainer />
   </React.StrictMode>,
 );
 

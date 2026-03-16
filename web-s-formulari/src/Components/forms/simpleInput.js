@@ -5,12 +5,7 @@ class simpleInput extends React.Component {
     return (
       <form>
         <label>Name:</label>
-        <input type="text" id="name" name="name" />
-        <input
-          type="submit"
-          value="Submit"
-          handleInput={this.props.handleInput}
-        />
+        <input type="text" id="name" onChange={this.props.handleInput} />
       </form>
     );
   }
