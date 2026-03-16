@@ -68,7 +68,7 @@ class ToDoContainer extends React.Component {
         items: prevState.items.map((item) => {
           if (item.id === id) {
             return {
-              ...item,
+              ...item, //operator spread
               completed: !item.completed,
             };
           }
