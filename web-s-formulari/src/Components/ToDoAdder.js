@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
 
-class ToDoAdder extends React.Component {
+class ToDoAdder extends Component {
   state = {
     title: "",
   };
