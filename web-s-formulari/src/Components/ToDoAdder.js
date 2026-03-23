@@ -27,8 +27,11 @@ class ToDoAdder extends Component {
           value={this.state.title}
           onChange={this.handleChange}
           placeholder="Add a new task"
+          className="input-text"
         />
-        <button type="submit">Add</button>
+        <button type="submit" className="input-submit">
+          Add
+        </button>
       </form>
     );
   }
