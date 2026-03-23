@@ -41,11 +41,11 @@ class appContainer extends React.Component {
     return (
       <div className="appContainer">
         <h1>Formulari</h1>
-        <SimpleInput handleInput={this.handleInput} />{" "}
-        <MultipleInput handleChange={this.handleChange} />
+        {/* <SimpleInput handleInput={this.handleInput} />{" "}*/}
+        {/* <MultipleInput handleChange={this.handleChange} />*/}
         <SelectInput handleInput={this.handleChange} />
-        <CheckBoxRadio handleInput={this.handlecheckbox} />
-        <FormValidation handleCheckEmail={this.handleCheckEmail} />
+        {/* <CheckBoxRadio handleInput={this.handlecheckbox} />*/}
+        {/* <FormValidation handleCheckEmail={this.handleCheckEmail} />*/}
       </div>
     );
   }
