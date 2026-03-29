@@ -2,6 +2,7 @@ import React from "react";
 import ToDoList from "./ToDoList";
 import ToDoAdder from "./ToDoAdder";
 import { v4 as uuidv4 } from "uuid";
+import Header from "./Header";
 
 class ToDoContainer extends React.Component {
   state = {
@@ -97,7 +98,6 @@ class ToDoContainer extends React.Component {
     console.log("add", title);
     const newItem = {
       userId: 1,
-      // id: this.state.items.length + 1,
       id: uuidv4(),
       title: title,
       completed: false,
@@ -113,6 +113,7 @@ class ToDoContainer extends React.Component {
     return (
       <div className="container">
         <div className="inner">
+          <Header />
           <ToDoAdder addItemProps={this.addItem} />
           <ToDoList
             items={this.state.items}
