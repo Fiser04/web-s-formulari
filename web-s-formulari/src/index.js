@@ -2,8 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-// import ToDoContainer from "./Components/TodoContainer";
-// import AppContainer from "./Components/appContainer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AppContainerBootstrap from "./Components/BootStrapComponent";
 
@@ -11,10 +9,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <div className="App min-vh-100 d-flex flex-column justify-content-center align-items-center">
-      {/* <AppContainer />*/}
       <AppContainerBootstrap />
     </div>
-    {/* <ToDoContainer />*/}
   </React.StrictMode>,
 );
 
