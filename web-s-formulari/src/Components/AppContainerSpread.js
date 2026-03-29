@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Detail from "./Spread/Detail";
 class AppContainerSpread extends React.Component {
   render() {
