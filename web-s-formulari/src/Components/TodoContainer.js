@@ -2,7 +2,6 @@ import React from "react";
 import ToDoList from "./ToDoList";
 import ToDoAdder from "./ToDoAdder";
 import { v4 as uuidv4 } from "uuid";
-import Header from "./Header";
 
 class ToDoContainer extends React.Component {
   state = {
@@ -113,13 +112,14 @@ class ToDoContainer extends React.Component {
   render() {
     return (
       <div className="container">
-        <Header></Header>
-        <ToDoAdder addItemProps={this.addItem} />
-        <ToDoList
-          items={this.state.items}
-          handleChangeProps={this.handleChange}
-          deleteItemProps={this.deleteItem}
-        />
+        <div className="inner">
+          <ToDoAdder addItemProps={this.addItem} />
+          <ToDoList
+            items={this.state.items}
+            handleChangeProps={this.handleChange}
+            deleteItemProps={this.deleteItem}
+          />
+        </div>
       </div>
     );
   }
