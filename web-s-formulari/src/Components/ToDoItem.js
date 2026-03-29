@@ -14,7 +14,7 @@ class ToDoItem extends React.Component {
           <input
             type="checkbox"
             className={Style.checkbox}
-            checked={this.props.completed}
+            checked={this.props.item.completed}
             onChange={() => this.props.handleChangeProps(this.props.item.id)}
           />
           <button
