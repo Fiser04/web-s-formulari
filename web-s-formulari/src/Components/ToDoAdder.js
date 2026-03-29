@@ -14,9 +14,6 @@ class ToDoAdder extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.addItemProps(this.state.title);
-    this.setState({
-      title: "",
-    });
   };
 
   render() {
@@ -29,9 +26,7 @@ class ToDoAdder extends Component {
           placeholder="Add a new task"
           className="input-text"
         />
-        <button type="submit" className="input-submit">
-          Add
-        </button>
+        <button className="input-submit">Add</button>
       </form>
     );
   }
