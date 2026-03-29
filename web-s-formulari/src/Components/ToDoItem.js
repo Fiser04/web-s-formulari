@@ -11,25 +11,20 @@ class ToDoItem extends React.Component {
     return (
       <div className={Style.item}>
         <li>
-          {/* <form onSubmit={this.alertUser}>*/}
-          <form>
-            <span style={this.props.completed ? completedStyle : null}>
-              {this.props.title}{" "}
-            </span>
-
-            <input
-              type="checkbox"
-              className={Style.checkbox}
-              checked={this.props.completed}
-              onChange={() => this.props.handleChangeProps(this.props.item.id)}
-            />
-            <button
-              type="button"
-              onClick={() => this.props.deleteItemProps(this.props.item.id)}
-            >
-              Delete
-            </button>
-          </form>
+          <input
+            type="checkbox"
+            className={Style.checkbox}
+            checked={this.props.completed}
+            onChange={() => this.props.handleChangeProps(this.props.item.id)}
+          />
+          <button
+            onClick={() => this.props.deleteItemProps(this.props.item.id)}
+          >
+            Delete
+          </button>
+          <span style={this.props.item.completed ? completedStyle : null}>
+            {this.props.item.title}{" "}
+          </span>
         </li>
       </div>
     );
