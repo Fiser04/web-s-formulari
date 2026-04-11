@@ -5,12 +5,15 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AppContainerBootstrap from "./Components/BootStrapComponent";
 
+import AppContainerStorageSimple from "./Components/AppContainerStorageSimple";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <div className="App min-vh-100 d-flex justify-content-center align-items-center">
+    {/* <div className="App min-vh-100 d-flex justify-content-center align-items-center">
       <AppContainerBootstrap />
-    </div>
+    </div>*/}
+    <AppContainerStorageSimple />
   </React.StrictMode>,
 );
 
