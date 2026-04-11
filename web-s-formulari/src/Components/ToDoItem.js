@@ -1,6 +1,14 @@
 import React from "react";
 import Style from "./ToDoItem.module.css";
 class ToDoItem extends React.Component {
+  state = {
+    editing: false,
+  };
+  onEditing = () => {
+    this.setState({
+      editing: true,
+    });
+  };
   render() {
     const completedStyle = {
       fontStyle: "italic",
@@ -8,9 +16,10 @@ class ToDoItem extends React.Component {
       textDecoration: "line-through",
       opacity: 0.4,
     };
+
     return (
-      <div className={Style.item}>
-        <li>
+      <div OnDoubleClick="">
+        <li className={Style.list}>
           <input
             type="checkbox"
             className={Style.checkbox}
