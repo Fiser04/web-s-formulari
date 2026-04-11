@@ -5,7 +5,7 @@ class AppContainerStorageSimple extends Component {
     super(props);
 
     this.state = {
-      username: ""
+      username: "",
     };
   }
 
@@ -14,7 +14,7 @@ class AppContainerStorageSimple extends Component {
 
     if (savedName) {
       this.setState({
-        username: savedName
+        username: savedName,
       });
     }
   }
@@ -23,7 +23,7 @@ class AppContainerStorageSimple extends Component {
     const value = e.target.value;
 
     this.setState({
-      username: value
+      username: value,
     });
 
     localStorage.setItem("username", value);
@@ -33,7 +33,7 @@ class AppContainerStorageSimple extends Component {
     localStorage.removeItem("username");
 
     this.setState({
-      username: ""
+      username: "",
     });
   };
 

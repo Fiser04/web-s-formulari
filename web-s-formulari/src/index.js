@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AppContainerBootstrap from "./Components/BootStrapComponent";
 
 import AppContainerStorageSimple from "./Components/AppContainerStorageSimple";
+import AppContainerStorageAdvance from "./Components/AppContainerStorageAdvance";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,7 +14,8 @@ root.render(
     {/* <div className="App min-vh-100 d-flex justify-content-center align-items-center">
       <AppContainerBootstrap />
     </div>*/}
-    <AppContainerStorageSimple />
+    {/* <AppContainerStorageSimple />*/}
+    <AppContainerStorageAdvance />
   </React.StrictMode>,
 );
 

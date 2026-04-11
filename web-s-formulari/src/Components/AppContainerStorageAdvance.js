@@ -7,7 +7,7 @@ class AppContainerStorageAdvance extends Component {
     this.state = {
       name: "",
       email: "",
-      city: ""
+      city: "",
     };
   }
 
@@ -20,14 +20,14 @@ class AppContainerStorageAdvance extends Component {
       this.setState({
         name: parsedProfile.name || "",
         email: parsedProfile.email || "",
-        city: parsedProfile.city || ""
+        city: parsedProfile.city || "",
       });
     }
   }
 
   handleChange = (e) => {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -35,7 +35,7 @@ class AppContainerStorageAdvance extends Component {
     const profileData = {
       name: this.state.name,
       email: this.state.email,
-      city: this.state.city
+      city: this.state.city,
     };
 
     localStorage.setItem("profile", JSON.stringify(profileData));
@@ -51,7 +51,7 @@ class AppContainerStorageAdvance extends Component {
       this.setState({
         name: parsedProfile.name || "",
         email: parsedProfile.email || "",
-        city: parsedProfile.city || ""
+        city: parsedProfile.city || "",
       });
     }
   };
@@ -62,7 +62,7 @@ class AppContainerStorageAdvance extends Component {
     this.setState({
       name: "",
       email: "",
-      city: ""
+      city: "",
     });
   };
 
@@ -112,9 +112,15 @@ class AppContainerStorageAdvance extends Component {
         </div>
 
         <div style={{ marginTop: "15px" }}>
-          <p><strong>Jméno:</strong> {this.state.name}</p>
-          <p><strong>Email:</strong> {this.state.email}</p>
-          <p><strong>Město:</strong> {this.state.city}</p>
+          <p>
+            <strong>Jméno:</strong> {this.state.name}
+          </p>
+          <p>
+            <strong>Email:</strong> {this.state.email}
+          </p>
+          <p>
+            <strong>Město:</strong> {this.state.city}
+          </p>
         </div>
       </div>
     );
