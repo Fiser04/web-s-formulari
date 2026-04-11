@@ -4,10 +4,17 @@ class ToDoItem extends React.Component {
   state = {
     editing: false,
   };
-  onEditing = () => {
+  handleEditing = () => {
     this.setState({
       editing: true,
     });
+  };
+  handleEditingDone = (event) => {
+    if (event.key === "Enter") {
+      this.setState({
+        editing: false,
+      });
+    }
   };
   render() {
     const completedStyle = {
@@ -16,10 +23,16 @@ class ToDoItem extends React.Component {
       textDecoration: "line-through",
       opacity: 0.4,
     };
-
+    let viewMode = {};
+    let editMode = {};
+    if (this.state.editing) {
+      viewMode.display = "none";
+    } else {
+      editMode.display = "none";
+    }
     return (
-      <div OnDoubleClick="">
-        <li className={Style.list}>
+      <li className={Style.item}>
+        <div onDoubleClick={this.handleEditing} style={viewMode}>
           <input
             type="checkbox"
             className={Style.checkbox}
@@ -34,8 +47,18 @@ class ToDoItem extends React.Component {
           <span style={this.props.item.completed ? completedStyle : null}>
             {this.props.item.title}{" "}
           </span>
-        </li>
-      </div>
+        </div>
+        <input
+          type="text"
+          className={Style.textInput}
+          style={editMode}
+          value={this.props.item.title}
+          onChange={(e) => {
+            this.props.setUpdateProps(e.target.value, this.props.item.id);
+          }}
+          onKeyDown={this.handleEditingDone}
+        />
+      </li>
     );
   }
 }

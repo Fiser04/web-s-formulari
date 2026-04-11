@@ -61,7 +61,16 @@ class ToDoContainer extends React.Component {
       }),
     });
   };
-
+  setUpdate = (updatedTitle, id) => {
+    this.setState({
+      items: this.state.items.map((item) => {
+        if (item.id === id) {
+          item.title = updatedTitle;
+        }
+        return item;
+      }),
+    });
+  };
   //HANDLE CHANGE STATE UPDATE WITH PREVIOUS STATE
   handleChange = (id) => {
     console.log("clicked", id);
@@ -119,6 +128,7 @@ class ToDoContainer extends React.Component {
             items={this.state.items}
             handleChangeProps={this.handleChange}
             deleteItemProps={this.deleteItem}
+            setUpdateProps={this.setUpdate}
           />
         </div>
       </div>
