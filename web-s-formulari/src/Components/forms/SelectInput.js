@@ -1,28 +1,34 @@
-import React from "react";
+import React, { Component } from "react";
 
-class simpleInput extends React.Component {
+class SelectExample extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      value: "",
+      country: "",
     };
   }
+
+  handleChange = (e) => {
+    this.setState({
+      country: e.target.value,
+    });
+  };
 
   render() {
     return (
       <div>
-        <form>
-          <label>Name:</label>
-          <select id="name" onChange={this.props.handleInput}>
-            <option value="">Select an option</option>
-            <option value="Option 1">Option 1</option>
-            <option value="Option 2">Option 2</option>
-            <option value="Option 3">Option 3</option>
-          </select>
-        </form>
+        <select value={this.state.country} onChange={this.handleChange}>
+          <option value="">Vyber stát</option>
+          <option value="cz">Česká republika</option>
+          <option value="sk">Slovensko</option>
+          <option value="de">Německo</option>
+        </select>
+
+        <p>Vybraný stát: {this.state.country}</p>
       </div>
     );
   }
 }
 
-export default simpleInput;
+export default SelectExample;

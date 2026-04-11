@@ -1,25 +1,53 @@
-import React from "react";
-class appContainer extends React.Component {
+import React, { Component } from "react";
+
+class FormValidation extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      error: "",
       email: "",
+      error: "",
     };
   }
+
+  handleChange = (e) => {
+    this.setState({
+      email: e.target.value,
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!this.state.email.includes("@")) {
+      this.setState({
+        error: "Neplatný email",
+      });
+    } else {
+      this.setState({
+        error: "",
+      });
+
+      alert("Formulář odeslán s emailem: " + this.state.email);
+    }
+  };
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input
           type="text"
-          name="username"
-          onChange={this.props.handleCheckEmail}
+          placeholder="Email"
+          value={this.state.email}
+          onChange={this.handleChange}
         />
+
         {this.state.error && <p style={{ color: "red" }}>{this.state.error}</p>}
-        <button type="submit">Submit</button>
+
+        <button type="submit">Odeslat</button>
       </form>
     );
   }
 }
 
-export default appContainer;
+export default FormValidation;

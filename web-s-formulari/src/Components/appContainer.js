@@ -1,54 +1,42 @@
-import React from "react";
-import SimpleInput from "./forms/simpleInput.js";
-import MultipleInput from "./forms/MultipleInput.js";
-import SelectInput from "./forms/SelectInput.js";
-import CheckBoxRadio from "./forms/CheckBoxRadio.js";
-import FormValidation from "./forms/FormValidation.js";
-class appContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { text: "" };
-  }
-  handleInput = (event) => {
-    event.preventDefault();
-    console.log("Input received:", event.target.value);
-    this.setState({ text: event.target.value });
-  };
+import React, { Component } from "react";
 
-  handleChange = (event) => {
-    [event.target.name] = event.target.value;
-    console.log("Input received:", event.target.value);
-  };
+import SimpleInput from "./forms/SimpleInput";
+import MultipleInputs from "./forms/MultipleInputs";
+import SelectExample from "./forms/SelectExample";
+import CheckboxRadioExample from "./forms/CheckboxRadioExample";
+import TextareaExample from "./forms/TextareaExample";
+import FormValidation from "./forms/FormValidation";
+import CompleteForm from "./forms/CompleteForm";
 
-  handlecheckbox = (event) => {
-    const { name, value } = event.target;
-    this.setState((prevState) => ({
-      [name]: value,
-    }));
-    console.log("Checkbox input received:", name, value);
-  };
-
-  handleCheckEmail = (event) => {
-    const email = event.target.value;
-    if (!email.includes("@")) {
-      this.setState({ error: "Invalid email address" });
-    } else {
-      this.setState({ error: "" });
-    }
-  };
-
+class AppContainer extends Component {
   render() {
     return (
-      <div className="appContainer">
-        <h1>Formulari</h1>
-        {/* <SimpleInput handleInput={this.handleInput} />{" "}*/}
-        {/* <MultipleInput handleChange={this.handleChange} />*/}
-        <SelectInput handleInput={this.handleChange} />
-        {/* <CheckBoxRadio handleInput={this.handlecheckbox} />*/}
-        {/* <FormValidation handleCheckEmail={this.handleCheckEmail} />*/}
+      <div style={{ padding: "40px" }}>
+        <h1>React formuláře</h1>
+
+        <h2>1. Jednoduchý input</h2>
+        <SimpleInput />
+
+        <h2>2. Více vstupních polí</h2>
+        <MultipleInputs />
+
+        <h2>3. Select</h2>
+        <SelectExample />
+
+        <h2>4. Checkbox a Radio</h2>
+        <CheckboxRadioExample />
+
+        <h2>5. Textarea</h2>
+        <TextareaExample />
+
+        <h2>6. Validace</h2>
+        <FormValidation />
+
+        <h2>7. Kompletní formulář</h2>
+        <CompleteForm />
       </div>
     );
   }
 }
 
-export default appContainer;
+export default AppContainer;

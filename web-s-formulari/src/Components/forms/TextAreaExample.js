@@ -1,34 +1,35 @@
 import React, { Component } from "react";
 
-class SimpleInput extends Component {
+class TextareaExample extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: "",
+      message: "",
     };
   }
 
   handleChange = (e) => {
     this.setState({
-      name: e.target.value,
+      message: e.target.value,
     });
   };
 
   render() {
     return (
       <div>
-        <input
-          type="text"
-          placeholder="Zadej jméno"
-          value={this.state.name}
+        <textarea
+          rows="4"
+          cols="40"
+          placeholder="Zadej zprávu"
+          value={this.state.message}
           onChange={this.handleChange}
         />
 
-        <p>Zadané jméno: {this.state.name}</p>
+        <p>{this.state.message}</p>
       </div>
     );
   }
 }
 
-export default SimpleInput;
+export default TextareaExample;
