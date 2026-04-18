@@ -63,3 +63,13 @@ body {
     outline: none;
     border: none;
 }
+
+.reset {
+    background: transparent;
+    color: #5b5b5b;
+    font-weight: 600;
+    cursor: pointer;
+    height: 45px;
+    border: none;
+    outline: none;
+}

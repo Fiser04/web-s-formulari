@@ -3,18 +3,26 @@ import Style from "./ToDoItem.module.css";
 class ToDoItem extends React.Component {
   state = {
     editing: false,
+    deleting: false,
   };
+
   handleEditing = () => {
     this.setState({
       editing: true,
     });
   };
+
   handleEditingDone = (event) => {
     if (event.key === "Enter") {
       this.setState({
         editing: false,
       });
     }
+  };
+
+  handleDeleting = () => {
+    this.props.onRemoved(this.props.item.title);
+    this.props.deleteItemProps(this.props.item.id);
   };
   render() {
     const completedStyle = {
@@ -39,11 +47,7 @@ class ToDoItem extends React.Component {
             checked={this.props.item.completed}
             onChange={() => this.props.handleChangeProps(this.props.item.id)}
           />
-          <button
-            onClick={() => this.props.deleteItemProps(this.props.item.id)}
-          >
-            Delete
-          </button>
+          <button onClick={this.handleDeleting}>Delete</button>
           <span style={this.props.item.completed ? completedStyle : null}>
             {this.props.item.title}{" "}
           </span>

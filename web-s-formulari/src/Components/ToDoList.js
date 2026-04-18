@@ -11,6 +11,7 @@ class ToDoList extends React.Component {
             handleChangeProps={this.props.handleChangeProps}
             deleteItemProps={this.props.deleteItemProps}
             setUpdateProps={this.props.setUpdateProps}
+            onRemoved={this.props.onRemoved}
           />
         ))}
       </ul>

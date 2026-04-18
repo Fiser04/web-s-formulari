@@ -7,6 +7,8 @@ import Header from "./Header";
 class ToDoContainer extends React.Component {
   state = {
     items: [],
+    removedText: "",
+    removedVisible: false,
   };
   //HANDLE CHANGE STATE UPDATE
   handleChange2 = (id) => {
@@ -102,18 +104,43 @@ class ToDoContainer extends React.Component {
       localStorage.setItem("items", JSON.stringify(this.state.items));
     }
   }
+
+  showRemoved = (title) => {
+    this.setState({
+      removedText: `Polozka ${title} byla odstranena`,
+      removedVisible: true,
+    });
+  };
+
+  fetchItems = () => {
+    fetch("https://jsonplaceholder.typicode.com/todos?_limit=10")
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          items: data,
+          removedText: "",
+          removedVisible: false,
+        });
+      });
+  };
+
   render() {
     return (
       <div className="container">
         <div className="inner">
           <Header />
           <ToDoAdder addItemProps={this.addItem} />
+          {this.state.removedVisible ? <p>{this.state.removedText}</p> : null}
           <ToDoList
             items={this.state.items}
             handleChangeProps={this.handleChange}
             deleteItemProps={this.deleteItem}
             setUpdateProps={this.setUpdate}
+            onRemoved={this.showRemoved}
           />
+          <button className="reset" onClick={this.fetchItems}>
+            Reset
+          </button>
         </div>
       </div>
     );
