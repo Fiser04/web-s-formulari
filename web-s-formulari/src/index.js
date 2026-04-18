@@ -1,23 +1,22 @@
+// import AppContainerBootstrap from "./Components/BootStrapComponent";
+// import AppContainerStorageSimple from "./Components/AppContainerStorageSimple";
+// import AppContainerStorageAdvance from "./Components/AppContainerStorageAdvance";
+// import AppLiveMethods from "./Components/AppLiveMethods";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import AppContainerBootstrap from "./Components/BootStrapComponent";
-
-// import AppContainerStorageSimple from "./Components/AppContainerStorageSimple";
-// import AppContainerStorageAdvance from "./Components/AppContainerStorageAdvance";
-// import AppLiveMethods from "./Components/AppLiveMethods";
-
 import AppLiveMethods from "./Components/AppLiveMethodsLite";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <AppLiveMethods />
     {/* <div className="App min-vh-100 d-flex justify-content-center align-items-center">
       <AppContainerBootstrap />
-    </div>*/}
-    {/* <AppContainerStorageSimple />*/}
-    <AppLiveMethods />
+    </div>
+     <AppContainerStorageSimple />*/}
   </React.StrictMode>,
 );
 
