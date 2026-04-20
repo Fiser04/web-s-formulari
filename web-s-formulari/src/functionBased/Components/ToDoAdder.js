@@ -34,8 +34,6 @@ import React, { useState } from "react";
 
 // export default ToDoAdder;
 
-//redoing using hooks
-
 const ToDoAdder = (props) => {
   const [title, setTitle] = useState("");
 
@@ -43,16 +41,12 @@ const ToDoAdder = (props) => {
     setTitle(event.target.value);
   };
 
-  //new handle change using spread operator
-  // const handleChange = (event) => {
-  //   setTitle({
-  //     ...title,
-  //     [event.target.name]: event.target.value,
-  //   });
-  // };
-
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (title.trim() === "") {
+      alert("Title cannot be empty");
+      return;
+    }
     props.addItemProps(title);
     setTitle("");
   };
