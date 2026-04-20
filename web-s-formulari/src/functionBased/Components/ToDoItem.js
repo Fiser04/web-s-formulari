@@ -76,6 +76,7 @@ const ToDoItem = (props) => {
     if (event.key === "Enter") {
       if (event.target.value.trim() === "") {
         alert("Please enter a value");
+        return;
       } else {
         setEditing(false);
       }
