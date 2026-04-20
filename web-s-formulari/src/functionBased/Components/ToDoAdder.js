@@ -43,6 +43,14 @@ const ToDoAdder = (props) => {
     setTitle(event.target.value);
   };
 
+  //new handle change using spread operator
+  // const handleChange = (event) => {
+  //   setTitle({
+  //     ...title,
+  //     [event.target.name]: event.target.value,
+  //   });
+  // };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     props.addItemProps(title);
