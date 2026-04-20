@@ -1,35 +1,66 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 
-class ToDoAdder extends Component {
-  state = {
-    title: "",
+// class ToDoAdder extends Component {
+//   state = {
+//     title: "",
+//   };
+
+//   handleChange = (event) => {
+//     this.setState({
+//       title: event.target.value,
+//     });
+//   };
+
+//   handleSubmit = (event) => {
+//     event.preventDefault();
+//     this.props.addItemProps(this.state.title);
+//   };
+
+//   render() {
+//     return (
+//       <form onSubmit={this.handleSubmit}>
+//         <input
+//           type="text"
+//           value={this.state.title}
+//           onChange={this.handleChange}
+//           placeholder="Add a new task"
+//           className="input-text"
+//         />
+//         <button className="input-submit">Add</button>
+//       </form>
+//     );
+//   }
+// }
+
+// export default ToDoAdder;
+
+//redoing using hooks
+
+const ToDoAdder = (props) => {
+  const [title, setTitle] = useState("");
+
+  const handleChange = (event) => {
+    setTitle(event.target.value);
   };
 
-  handleChange = (event) => {
-    this.setState({
-      title: event.target.value,
-    });
-  };
-
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    this.props.addItemProps(this.state.title);
+    props.addItemProps(title);
+    setTitle("");
   };
 
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          value={this.state.title}
-          onChange={this.handleChange}
-          placeholder="Add a new task"
-          className="input-text"
-        />
-        <button className="input-submit">Add</button>
-      </form>
-    );
-  }
-}
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={title}
+        onChange={handleChange}
+        placeholder="Add a new task"
+        className="input-text"
+      />
+      <button className="input-submit">Add</button>
+    </form>
+  );
+};
 
 export default ToDoAdder;
