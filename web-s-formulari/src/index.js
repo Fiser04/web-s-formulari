@@ -8,12 +8,13 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
-import AppReactHooks from "./Components/AppReactHookExample";
+// import AppReactHooks from "./Components/AppReactHookExample";
 
+import RHFormsAppContainer from "./Components/RHFormsAppContainer";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AppReactHooks />
+    <RHFormsAppContainer />
     {/* <div className="App min-vh-100 d-flex justify-content-center align-items-center">
       <AppContainerBootstrap />
     </div>
