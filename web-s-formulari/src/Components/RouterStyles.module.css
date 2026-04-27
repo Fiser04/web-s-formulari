@@ -1,0 +1,50 @@
+/* Container for sidebar + main */
+.rhforms-container {
+    display: flex;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar styles */
+.rhforms-sidebar {
+    background: #f4f4f4;
+    padding: 24px 16px;
+    width: 220px;
+    border-right: 1px solid #ddd;
+}
+
+.rhforms-sidebar h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Navigation styles */
+.rhforms-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.rhforms-navlink {
+    color: #333;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.rhforms-navlink.active,
+.rhforms-navlink:active,
+.rhforms-navlink:hover {
+    background: #1976d2;
+    color: #fff;
+}
+
+/* Main content area */
+.rhforms-main {
+    flex: 1;
+    padding: 32px;
+    background: #fff;
+}

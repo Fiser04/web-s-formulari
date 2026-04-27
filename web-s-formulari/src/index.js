@@ -9,12 +9,13 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import AppReactHooks from "./Components/AppReactHookExample";
+// import RHFormsAppContainer from "./Components/RHFormsAppContainer";
 
-import RHFormsAppContainer from "./Components/RHFormsAppContainer";
+import RHFormsRouter from "./Components/RHFormsRouter";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RHFormsAppContainer />
+    <RHFormsRouter />
     {/* <div className="App min-vh-100 d-flex justify-content-center align-items-center">
       <AppContainerBootstrap />
     </div>
